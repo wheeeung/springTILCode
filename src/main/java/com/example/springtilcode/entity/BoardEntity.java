@@ -25,5 +25,11 @@ public class BoardEntity {
     private String title;
 
     @Column
-    private String content; 
+    private String content;
+
+    public void update(String writer, String title, String content){
+        this.title = title;
+        this.content = content;
+        this.writer = writer;
+    }
 }
