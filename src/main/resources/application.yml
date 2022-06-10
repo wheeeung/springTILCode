@@ -26,4 +26,4 @@ spring:
               client-secret: ${SECRET}
               scope : email, profile
   jwt:
-      secret: 64yA642V7IaM7ZSE7Yq47Juo7Ja066eI7J207Iqk7YSw6rOg65Ox7ZWZ6rWQIDLtlZnrhYQgMuuwmCA567KIIOuwle2cmOydkeyeheuLiOuLpC4g7KCA64qUIOyKpO2UhOungeydhCDqs7XrtoDtlZjqs6DsnojsirXri4jri6Qu
+      secret: ${JWTSECRET}
