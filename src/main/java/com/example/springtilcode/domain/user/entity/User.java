@@ -1,6 +1,7 @@
 package com.example.springtilcode.domain.user.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
@@ -21,4 +23,10 @@ public class User {
 
     @Column
     private String password;
+
+    @Column
+    private String name;
+
+    @Column
+    private String authority;
 }
