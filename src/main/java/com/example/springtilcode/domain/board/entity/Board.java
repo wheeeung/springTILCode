@@ -1,4 +1,4 @@
-package com.example.springtilcode.entity;
+package com.example.springtilcode.domain.board.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BoardEntity {
+public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,8 +1,8 @@
-package com.example.springtilcode.service;
+package com.example.springtilcode.domain.board.service;
 
-import com.example.springtilcode.controller.dto.BoardDto;
-import com.example.springtilcode.entity.BoardEntity;
-import com.example.springtilcode.repository.BoardRepository;
+import com.example.springtilcode.domain.board.controller.BoardDto;
+import com.example.springtilcode.domain.board.entity.Board;
+import com.example.springtilcode.domain.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ public class BoardService {
 
     @Transactional
     public void create(BoardDto dto){
-        boardRepository.save(BoardEntity.builder()
+        boardRepository.save(Board.builder()
                 .writer(dto.getWriter())
                 .title(dto.getTitle())
                 .content(dto.getContent())
@@ -25,18 +25,18 @@ public class BoardService {
 
     @Transactional
     public void delete(long id){
-        BoardEntity boardEntity = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
+        Board boardEntity = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
         boardRepository.delete(boardEntity);
     }
 
     @Transactional
-    public BoardEntity read(long id){
+    public Board read(long id){
         return boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
     }
 
     @Transactional
     public void update(long id, BoardDto dto){
-        BoardEntity boardEntity = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
+        Board boardEntity = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
         boardEntity.update(dto.getWriter(), dto.getTitle(), dto.getContent());
         boardRepository.save(boardEntity);
     }

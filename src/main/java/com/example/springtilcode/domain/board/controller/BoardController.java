@@ -1,8 +1,7 @@
-package com.example.springtilcode.controller;
+package com.example.springtilcode.domain.board.controller;
 
-import com.example.springtilcode.controller.dto.BoardDto;
-import com.example.springtilcode.entity.BoardEntity;
-import com.example.springtilcode.service.BoardService;
+import com.example.springtilcode.domain.board.entity.Board;
+import com.example.springtilcode.domain.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +12,7 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping("/board/{id}")
-    public BoardEntity read(@PathVariable long id){
+    public Board read(@PathVariable long id){
         return boardService.read(id);
     }
 
