@@ -30,4 +30,12 @@ public class User {
 
     @Column
     private String authority;
+
+    @Column
+    private Role role;
+
+    public User update(String name){
+        this.name = name;
+        return this;
+    }
 }
