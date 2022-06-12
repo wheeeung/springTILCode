@@ -1,5 +1,8 @@
 package com.example.springtilcode.domain.board.entity;
 
+import com.example.springtilcode.domain.user.entity.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,6 +29,11 @@ public class Board {
 
     @Column
     private String content;
+
+    @JsonIgnoreProperties({"posts"})
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public void update(String writer, String title, String content){
         this.title = title;
