@@ -15,7 +15,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     @Transactional
-    public List<QuerydslDto> findUserInfo(long id){
+    public QuerydslDto findUserInfo(long id){
         return userRepository.findByUser(id).orElseThrow(() -> new RuntimeException("not found"));
     }
 }
