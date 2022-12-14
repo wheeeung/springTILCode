@@ -45,7 +45,9 @@ public class SecurityConfig {
 
                .and()
                .authorizeRequests()
-               .anyRequest().permitAll()
+               .antMatchers("/signup").permitAll()
+               .antMatchers("/login").permitAll()
+               .anyRequest().authenticated()
 
                .and()
                .addFilterBefore(new JwtFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class);

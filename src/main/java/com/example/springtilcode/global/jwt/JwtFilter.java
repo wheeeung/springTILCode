@@ -28,7 +28,6 @@ public class JwtFilter extends OncePerRequestFilter {
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            log.info(SecurityContextHolder.getContext().getAuthentication().getName());
         }
         else {
             log.info("유효한 토큰이 없다.");
