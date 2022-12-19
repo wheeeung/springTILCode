@@ -43,13 +43,4 @@ public class AuthService {
                 .refreshToken(refreshToken)
                 .build();
     }
-
-    @Transactional
-    public UserResponse getUser(){
-        User user = userRepository.findByEmail(SecurityUtil.getEmail()).orElseThrow(UserNotFoundException::new);
-        return UserResponse.builder()
-                .id(user.getId())
-                .email(user.getEmail())
-                .build();
-    }
 }

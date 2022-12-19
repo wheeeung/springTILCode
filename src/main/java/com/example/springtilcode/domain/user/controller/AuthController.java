@@ -4,6 +4,7 @@ import com.example.springtilcode.domain.user.controller.dto.AuthRequest;
 import com.example.springtilcode.domain.user.controller.dto.TokenResponse;
 import com.example.springtilcode.domain.user.controller.dto.UserResponse;
 import com.example.springtilcode.domain.user.service.AuthService;
+import com.example.springtilcode.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
+    private final UserService userService;
 
     @PostMapping("/signup")
     public void signup(@Valid @RequestBody AuthRequest request){
@@ -29,6 +31,6 @@ public class AuthController {
 
     @GetMapping("/mypage")
     public UserResponse getUser(){
-        return authService.getUser();
+        return userService.getUser();
     }
 }
