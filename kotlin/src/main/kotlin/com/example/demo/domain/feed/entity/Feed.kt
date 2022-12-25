@@ -7,14 +7,14 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-class Feed {
+class Feed (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long?= null
+    var id: Long?= null,
 
     @Column
-    var title: String?= null
+    var title: String?= null,
 
     @Column
     var content: String?= null
-}
+)
