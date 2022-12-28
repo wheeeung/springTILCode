@@ -21,4 +21,15 @@ class FeedService (
         )
         return FeedResponse(feed)
     }
+
+    @Transactional
+    fun delete(id: Long){
+        feedRepository.deleteById(id)
+    }
+
+    @Transactional
+    fun getFeed(id: Long): FeedResponse{
+        val feed: Feed = feedRepository.findById(id).orElseThrow()
+        return FeedResponse(feed)
+    }
 }
