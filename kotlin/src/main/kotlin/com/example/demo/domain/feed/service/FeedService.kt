@@ -3,7 +3,9 @@ package com.example.demo.domain.feed.service
 import com.example.demo.domain.feed.controller.dto.request.FeedRequest
 import com.example.demo.domain.feed.controller.dto.response.FeedResponse
 import com.example.demo.domain.feed.entity.Feed
+import com.example.demo.domain.feed.exception.FeedNotFoundException
 import com.example.demo.domain.feed.repository.FeedRepository
+import com.example.demo.global.error.GlobalErrorCode
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -29,7 +31,7 @@ class FeedService (
 
     @Transactional
     fun getFeed(id: Long): FeedResponse{
-        val feed: Feed = feedRepository.findById(id).orElseThrow()
+        val feed: Feed = feedRepository.findById(id).orElseThrow{FeedNotFoundException(GlobalErrorCode.BAD_REQUEST)}
         return FeedResponse(feed)
     }
 }
