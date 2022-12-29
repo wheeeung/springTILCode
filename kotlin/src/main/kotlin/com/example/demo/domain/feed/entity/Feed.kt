@@ -1,16 +1,12 @@
 package com.example.demo.domain.feed.entity
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
 
 @Entity
 class Feed (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long?= null,
+    val id: Long?= null,
 
     @Column
     var title: String?= null,
