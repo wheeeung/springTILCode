@@ -3,7 +3,7 @@ package com.example.demo.domain.feed.entity
 import jakarta.persistence.*
 
 @Entity
-class Feed (
+data class Feed (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?= null,
