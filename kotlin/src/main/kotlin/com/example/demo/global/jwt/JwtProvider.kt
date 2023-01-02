@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class TokenProvider (
+class JwtProvider (
     val jwtProperties: JwtProperties
 ){
     val ACCESSTOKEN_EXP_TIME: Long = 1000L * 60 * 60

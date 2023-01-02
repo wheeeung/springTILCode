@@ -10,7 +10,7 @@ import org.springframework.web.filter.OncePerRequestFilter
 
 @Component
 class JwtFilter(
-    private val jwtProvider: TokenProvider
+    private val jwtProvider: JwtProvider
 ) : OncePerRequestFilter() {
     override fun doFilterInternal(
         request: HttpServletRequest,
