@@ -5,6 +5,7 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import org.springframework.security.crypto.password.PasswordEncoder
 
 @Entity
 data class User (
@@ -17,4 +18,9 @@ data class User (
 
     @Column
     var password: String? = null
-)
+){
+    constructor(email: String?, password: String?, passwordEncoder: PasswordEncoder) : this() {
+        this.email = email
+        this.password = passwordEncoder.encode(password)
+    }
+}
