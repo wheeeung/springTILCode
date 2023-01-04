@@ -1,4 +1,4 @@
-package com.example.demo.domain.auth.entity
+package com.example.demo.domain.token.entity
 
 import jakarta.persistence.Id
 import org.springframework.data.redis.core.RedisHash

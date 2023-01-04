@@ -1,6 +1,6 @@
-package com.example.demo.domain.auth.repository
+package com.example.demo.domain.token.repository
 
-import com.example.demo.domain.auth.entity.RefreshToken
+import com.example.demo.domain.token.entity.RefreshToken
 import org.springframework.data.repository.CrudRepository
 
 interface RefreshTokenRepository : CrudRepository<RefreshToken, String>{
