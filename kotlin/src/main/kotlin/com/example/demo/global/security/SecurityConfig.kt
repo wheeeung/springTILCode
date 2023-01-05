@@ -29,6 +29,7 @@ class SecurityConfig(
 
             .and()
             .authorizeHttpRequests()
+            .requestMatchers("/signup").permitAll()
             .anyRequest().authenticated()
 
             .and()
