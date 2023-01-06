@@ -29,7 +29,7 @@ class SecurityConfig(
 
             .and()
             .authorizeHttpRequests()
-            .requestMatchers("/signup").permitAll()
+            .requestMatchers("/signup", "/login").permitAll()
             .anyRequest().authenticated()
 
             .and()
