@@ -27,6 +27,7 @@ dependencies {
     implementation("io.jsonwebtoken:jjwt:0.9.1")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation ("javax.xml.bind:jaxb-api:2.4.0-b180830.0359")
+    implementation("org.springframework.boot:spring-boot-starter-log4j2")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
