@@ -1,6 +1,7 @@
 package com.example.demo.domain.user.controller
 
 import com.example.demo.domain.user.controller.dto.request.UserRequest
+import com.example.demo.domain.user.controller.dto.response.TokenResponse
 import com.example.demo.domain.user.service.UserService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -13,5 +14,10 @@ class UserController (
     @PostMapping("/signup")
     fun signup(@RequestBody userRequest: UserRequest){
         userService.signup(userRequest.email, userRequest.password)
+    }
+
+    @PostMapping("/login")
+    fun login(@RequestBody userRequest: UserRequest): TokenResponse{
+        return userService.login(userRequest.email, userRequest.password)
     }
 }

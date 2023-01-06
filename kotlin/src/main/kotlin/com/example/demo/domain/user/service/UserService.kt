@@ -1,7 +1,11 @@
 package com.example.demo.domain.user.service
 
+import com.example.demo.domain.user.controller.dto.response.TokenResponse
 import com.example.demo.domain.user.entity.User
+import com.example.demo.domain.user.exception.EmailNotFoundException
+import com.example.demo.domain.user.exception.PasswordNotMatchesException
 import com.example.demo.domain.user.repository.UserRepository
+import com.example.demo.global.error.GlobalErrorCode
 import com.example.demo.global.jwt.JwtProvider
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -17,5 +21,17 @@ class UserService (
     fun signup(email: String, password: String){
         val user = User(email, password, passwordEncoder)
         userRepository.save(user)
+    }
+
+    @Transactional
+    fun login(email: String, password: String): TokenResponse{
+        val user = userRepository.findByEmail(email) ?: throw EmailNotFoundException(GlobalErrorCode.BAD_REQUEST)
+        if(!passwordEncoder.matches(user.password, password))
+            throw PasswordNotMatchesException(GlobalErrorCode.BAD_REQUEST)
+
+        val access = jwtProvider.createAccessToken(email)
+        val refresh = jwtProvider.createRefreshToken(email)
+
+        return TokenResponse(access, refresh)
     }
 }
