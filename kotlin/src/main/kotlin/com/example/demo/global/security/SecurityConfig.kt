@@ -1,5 +1,7 @@
 package com.example.demo.global.security
 
+import com.example.demo.global.jwt.JwtAccessDeniedHandler
+import com.example.demo.global.jwt.JwtAuthenticationEntryPoint
 import com.example.demo.global.jwt.JwtFilter
 import com.example.demo.global.jwt.JwtProvider
 import org.springframework.context.annotation.Bean
@@ -15,7 +17,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 class SecurityConfig(
-    private val jwtProvider: JwtProvider
+    private val jwtProvider: JwtProvider,
+    private val jwtAccessDeniedHandler: JwtAccessDeniedHandler,
+    private val jwtAuthenticationEntryPoint: JwtAuthenticationEntryPoint
 ) {
     @Bean
     fun filterChain(http: HttpSecurity) : SecurityFilterChain{
@@ -24,6 +28,11 @@ class SecurityConfig(
             .and()
             .csrf().disable()
 
+            .exceptionHandling()
+            .authenticationEntryPoint(jwtAuthenticationEntryPoint)
+            .accessDeniedHandler(jwtAccessDeniedHandler)
+
+            .and()
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
