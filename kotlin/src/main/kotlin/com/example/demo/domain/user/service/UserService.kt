@@ -25,7 +25,7 @@ class UserService (
 
     @Transactional
     fun login(email: String, password: String): TokenResponse{
-        val user = userRepository.findByEmail(email) ?: throw EmailNotFoundException(GlobalErrorCode.BAD_REQUEST)
+        val user = userRepository.findByEmail(email) ?: throw EmailNotFoundException(GlobalErrorCode.EMAIL_NOT_FOUND)
         if(!passwordEncoder.matches(password, user.password))
             throw PasswordNotMatchesException(GlobalErrorCode.BAD_REQUEST)
 
