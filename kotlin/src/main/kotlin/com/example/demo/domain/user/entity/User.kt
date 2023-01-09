@@ -1,6 +1,6 @@
 package com.example.demo.domain.user.entity
 
-import com.example.demo.domain.feed.entity.Feed
+import com.example.demo.domain.feed.entity.Post
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -23,7 +23,7 @@ data class User (
     var password: String? = null,
 
     @OneToMany(mappedBy = "user", cascade = [CascadeType.REMOVE])
-    var feedList: List<Feed>?= null
+    var postList: List<Post>?= null
 ){
     constructor(email: String?, password: String?, passwordEncoder: PasswordEncoder) : this() {
         this.email = email

@@ -1,10 +1,10 @@
 package com.example.demo.domain.feed.service
 
-import com.example.demo.domain.feed.controller.dto.request.FeedRequest
-import com.example.demo.domain.feed.controller.dto.response.FeedResponse
-import com.example.demo.domain.feed.entity.Feed
-import com.example.demo.domain.feed.exception.FeedNotFoundException
-import com.example.demo.domain.feed.repository.FeedRepository
+import com.example.demo.domain.feed.controller.dto.request.PostRequest
+import com.example.demo.domain.feed.controller.dto.response.PostResponse
+import com.example.demo.domain.feed.entity.Post
+import com.example.demo.domain.feed.exception.PostNotFoundException
+import com.example.demo.domain.feed.repository.PostRepository
 import com.example.demo.domain.user.entity.User
 import com.example.demo.domain.user.exception.EmailNotFoundException
 import com.example.demo.domain.user.repository.UserRepository
@@ -14,32 +14,32 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
-class FeedService (
-    private val feedRepository: FeedRepository,
+class PostService (
+    private val postRepository: PostRepository,
     private val userRepository: UserRepository,
     private val securityUtil: SecurityUtil
 ){
     @Transactional
-    fun create(request: FeedRequest): FeedResponse{
+    fun create(request: PostRequest): PostResponse{
         val user: User = userRepository.findByEmail(securityUtil.getEmail()) ?: throw EmailNotFoundException(GlobalErrorCode.EMAIL_NOT_FOUND)
-        val feed: Feed = feedRepository.save(
-            Feed(
+        val post: Post = postRepository.save(
+            Post(
                title = request.title,
                content = request.content,
                user = user
             )
         )
-        return FeedResponse(feed)
+        return PostResponse(post)
     }
 
     @Transactional
     fun delete(id: Long){
-        feedRepository.deleteById(id)
+        postRepository.deleteById(id)
     }
 
     @Transactional
-    fun getFeed(id: Long): FeedResponse{
-        val feed: Feed = feedRepository.findById(id).orElseThrow{FeedNotFoundException(GlobalErrorCode.BAD_REQUEST)}
-        return FeedResponse(feed)
+    fun getFeed(id: Long): PostResponse{
+        val post: Post = postRepository.findById(id).orElseThrow{PostNotFoundException(GlobalErrorCode.BAD_REQUEST)}
+        return PostResponse(post)
     }
 }

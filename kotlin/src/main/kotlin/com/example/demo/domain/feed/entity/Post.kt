@@ -4,7 +4,7 @@ import com.example.demo.domain.user.entity.User
 import jakarta.persistence.*
 
 @Entity
-data class Feed (
+data class Post (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?= null,
