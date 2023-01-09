@@ -3,6 +3,7 @@ package com.example.demo.domain.feed.controller
 import com.example.demo.domain.feed.controller.dto.request.PostRequest
 import com.example.demo.domain.feed.controller.dto.response.PostResponse
 import com.example.demo.domain.feed.service.PostService
+import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -15,7 +16,7 @@ class PostController (
     private val postService: PostService
 ){
     @PostMapping("/post")
-    fun create(@RequestBody request: PostRequest): PostResponse{
+    fun create(@Valid @RequestBody request: PostRequest): PostResponse{
         return postService.create(request)
     }
 
