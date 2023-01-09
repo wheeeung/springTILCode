@@ -9,8 +9,8 @@ data class PostResponse(
     val user: User?
 ){
     constructor(post: Post): this(
-        title = feed.title,
-        content = feed.content,
-        user = feed.user
+        title = post.title,
+        content = post.content,
+        user = post.user
     )
 }
