@@ -2,22 +2,22 @@ package com.example.demo.domain.user.controller
 
 import com.example.demo.domain.user.controller.dto.request.UserRequest
 import com.example.demo.domain.user.controller.dto.response.TokenResponse
-import com.example.demo.domain.user.service.UserService
+import com.example.demo.domain.user.service.AuthService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class UserController (
-    private val userService: UserService
+class AuthController (
+    private val authService: AuthService
 ){
     @PostMapping("/signup")
     fun signup(@RequestBody userRequest: UserRequest){
-        userService.signup(userRequest.email, userRequest.password)
+        authService.signup(userRequest.email, userRequest.password)
     }
 
     @PostMapping("/login")
     fun login(@RequestBody userRequest: UserRequest): TokenResponse{
-        return userService.login(userRequest.email, userRequest.password)
+        return authService.login(userRequest.email, userRequest.password)
     }
 }
