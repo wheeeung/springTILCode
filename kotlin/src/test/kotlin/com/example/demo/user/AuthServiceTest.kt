@@ -17,4 +17,10 @@ class AuthServiceTest (
         authService.signup("whee@gmail.com", "1234")
     }
 
+    @Test
+    @DisplayName("2. 로그인")
+    fun login(){
+        val tokenResponse = authService.login("whee@gmail.com", "1234")
+        println(tokenResponse)
+    }
 }
