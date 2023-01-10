@@ -30,6 +30,12 @@ class PostServiceTest (
     @Test
     @DisplayName("2. 글 보기")
     fun getPost(){
-        postService.getPost(1)
+        postService.getPost(2)
+    }
+
+    @Test
+    @DisplayName("3. 글 삭제")
+    fun delete(){
+        postService.delete(1)
     }
 }
