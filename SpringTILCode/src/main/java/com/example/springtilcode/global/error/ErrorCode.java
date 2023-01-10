@@ -7,7 +7,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorCode {
     USER_NOT_FOUND(400, "user not found"),
-    PASSWORD_NOT_MATCH(400, "password did not match");
+    PASSWORD_NOT_MATCH(400, "password did not match"),
+    POST_NOT_FOUND(400, "post not found");
     private final int httpStatus;
     private final String message;
 }
