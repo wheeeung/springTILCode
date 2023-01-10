@@ -22,4 +22,10 @@ public class PostServiceTest {
     public void delete(){
         postService.delete(1);
     }
+
+    @Test
+    @DisplayName("3. 글 보기")
+    public void getPost(){
+        postService.getPost(2);
+    }
 }
