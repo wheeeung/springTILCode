@@ -26,4 +26,10 @@ class PostServiceTest (
         val request = PostRequest("title", "content")
         postService.create(request)
     }
+
+    @Test
+    @DisplayName("2. 글 보기")
+    fun getPost(){
+        postService.getPost(1)
+    }
 }
