@@ -16,4 +16,10 @@ public class PostServiceTest {
     public void save(){
         postService.save("title", "content");
     }
+
+    @Test
+    @DisplayName("2. 글 삭제")
+    public void delete(){
+        postService.delete(1);
+    }
 }
