@@ -1,5 +1,6 @@
 package com.example.springtilcode.domain.post.entity;
 
+import com.example.springtilcode.domain.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,4 +23,8 @@ public class Post {
 
     @Column
     private String content;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
