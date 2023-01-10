@@ -1,6 +1,6 @@
-package com.example.demo.domain.feed.controller.dto.response
+package com.example.demo.domain.post.controller.dto.response
 
-import com.example.demo.domain.feed.entity.Post
+import com.example.demo.domain.post.entity.Post
 import com.example.demo.domain.user.entity.User
 
 data class PostResponse(

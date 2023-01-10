@@ -1,4 +1,4 @@
-package com.example.demo.domain.feed.controller.dto.request
+package com.example.demo.domain.post.controller.dto.request
 
 import jakarta.validation.constraints.NotBlank
 

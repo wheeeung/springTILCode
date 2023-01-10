@@ -1,4 +1,4 @@
-package com.example.demo.domain.feed.entity
+package com.example.demo.domain.post.entity
 
 import com.example.demo.domain.user.entity.User
 import jakarta.persistence.*

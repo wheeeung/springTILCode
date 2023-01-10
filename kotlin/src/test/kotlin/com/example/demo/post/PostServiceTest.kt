@@ -1,7 +1,7 @@
 package com.example.demo.post
 
-import com.example.demo.domain.feed.controller.dto.request.PostRequest
-import com.example.demo.domain.feed.service.PostService
+import com.example.demo.domain.post.controller.dto.request.PostRequest
+import com.example.demo.domain.post.service.PostService
 import com.example.demo.global.security.UserAuthentication
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName

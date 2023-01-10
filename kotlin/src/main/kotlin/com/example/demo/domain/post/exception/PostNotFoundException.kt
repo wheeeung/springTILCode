@@ -1,4 +1,4 @@
-package com.example.demo.domain.feed.exception
+package com.example.demo.domain.post.exception
 
 import com.example.demo.global.error.GlobalErrorCode
 import com.example.demo.global.error.exception.CustomException

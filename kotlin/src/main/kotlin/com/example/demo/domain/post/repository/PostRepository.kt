@@ -1,6 +1,6 @@
-package com.example.demo.domain.feed.repository
+package com.example.demo.domain.post.repository
 
-import com.example.demo.domain.feed.entity.Post
+import com.example.demo.domain.post.entity.Post
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface PostRepository : JpaRepository<Post, Long>{

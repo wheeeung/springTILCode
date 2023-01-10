@@ -1,8 +1,8 @@
-package com.example.demo.domain.feed.controller
+package com.example.demo.domain.post.controller
 
-import com.example.demo.domain.feed.controller.dto.request.PostRequest
-import com.example.demo.domain.feed.controller.dto.response.PostResponse
-import com.example.demo.domain.feed.service.PostService
+import com.example.demo.domain.post.controller.dto.request.PostRequest
+import com.example.demo.domain.post.controller.dto.response.PostResponse
+import com.example.demo.domain.post.service.PostService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -27,7 +27,7 @@ class PostController (
 
     @GetMapping("/post/{id}")
     fun getPost(@PathVariable id: Long): PostResponse{
-        return postService.getFeed(id)
+        return postService.getPost(id)
     }
 
 }

@@ -1,10 +1,10 @@
-package com.example.demo.domain.feed.service
+package com.example.demo.domain.post.service
 
-import com.example.demo.domain.feed.controller.dto.request.PostRequest
-import com.example.demo.domain.feed.controller.dto.response.PostResponse
-import com.example.demo.domain.feed.entity.Post
-import com.example.demo.domain.feed.exception.PostNotFoundException
-import com.example.demo.domain.feed.repository.PostRepository
+import com.example.demo.domain.post.controller.dto.request.PostRequest
+import com.example.demo.domain.post.controller.dto.response.PostResponse
+import com.example.demo.domain.post.entity.Post
+import com.example.demo.domain.post.exception.PostNotFoundException
+import com.example.demo.domain.post.repository.PostRepository
 import com.example.demo.domain.user.entity.User
 import com.example.demo.domain.user.exception.EmailNotFoundException
 import com.example.demo.domain.user.repository.UserRepository
@@ -38,7 +38,7 @@ class PostService (
     }
 
     @Transactional
-    fun getFeed(id: Long): PostResponse{
+    fun getPost(id: Long): PostResponse{
         val post: Post = postRepository.findById(id).orElseThrow{PostNotFoundException(GlobalErrorCode.BAD_REQUEST)}
         return PostResponse(post)
     }

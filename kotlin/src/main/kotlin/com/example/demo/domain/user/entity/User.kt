@@ -1,6 +1,6 @@
 package com.example.demo.domain.user.entity
 
-import com.example.demo.domain.feed.entity.Post
+import com.example.demo.domain.post.entity.Post
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
