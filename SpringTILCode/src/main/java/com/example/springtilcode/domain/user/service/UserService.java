@@ -22,6 +22,7 @@ public class UserService {
         return UserResponse.builder()
                 .id(user.getId())
                 .email(user.getEmail())
+                .postList(user.getPostList())
                 .build();
     }
 }
