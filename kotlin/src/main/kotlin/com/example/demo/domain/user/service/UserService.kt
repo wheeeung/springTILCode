@@ -1,6 +1,7 @@
 package com.example.demo.domain.user.service
 
 import com.example.demo.domain.user.controller.dto.response.UserResponse
+import com.example.demo.domain.user.exception.AlreadyExistException
 import com.example.demo.domain.user.exception.EmailNotFoundException
 import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.global.error.GlobalErrorCode
@@ -22,6 +23,8 @@ class UserService (
 
     @Transactional
     fun editProfile(email: String) {
+        if(userRepository.findByEmail(email)?.equals(null) == false)
+            throw AlreadyExistException(GlobalErrorCode.ALREADY_EXIST)
         val user = userRepository.findByEmail(securityUtil.getEmail())
             ?: throw EmailNotFoundException(GlobalErrorCode.EMAIL_NOT_FOUND)
         user.editProfile(email)

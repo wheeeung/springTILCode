@@ -7,7 +7,8 @@ enum class GlobalErrorCode(
     message: String
 ) {
     BAD_REQUEST(HttpStatus.BAD_REQUEST, "bad request"),
-    EMAIL_NOT_FOUND(HttpStatus.BAD_REQUEST, "email not found");
+    EMAIL_NOT_FOUND(HttpStatus.BAD_REQUEST, "email not found"),
+    ALREADY_EXIST(HttpStatus.BAD_REQUEST, "already exist");
 
     val status: Int = status.value()
     val message: String = message
