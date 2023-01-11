@@ -29,4 +29,8 @@ data class User (
         this.email = email
         this.password = passwordEncoder.encode(password)
     }
+
+    fun editProfile(email: String?){
+        this.email = email
+    }
 }
