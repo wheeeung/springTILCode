@@ -19,4 +19,11 @@ class UserService (
             ?: throw EmailNotFoundException(GlobalErrorCode.EMAIL_NOT_FOUND)
         return UserResponse(user.email, user.postList)
     }
+
+    @Transactional
+    fun editProfile() {
+        val user = userRepository.findByEmail(securityUtil.getEmail())
+            ?: throw EmailNotFoundException(GlobalErrorCode.EMAIL_NOT_FOUND)
+        user.editProfile(securityUtil.getEmail())
+    }
 }
