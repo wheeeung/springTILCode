@@ -14,13 +14,17 @@ class UserServiceTest (
 ){
     @BeforeEach
     fun setUser(){
-        val userAuthentication = UserAuthentication("whee@gmail.com", null, null)
+        val userAuthentication = UserAuthentication("whee050916@gmail.com", null, null)
         SecurityContextHolder.getContext().authentication = userAuthentication
     }
 
     @Test
     fun getUser(){
         userService.getUser()
+    }
 
+    @Test
+    fun editProfile(){
+        userService.editProfile("whee050916@gmail.com")
     }
 }
