@@ -21,7 +21,7 @@ class AuthService (
     @Transactional
     fun signup(email: String, password: String){
         if(userRepository.findByEmail(email)?.equals(null) == false)
-            throw AlreadyExistException(GlobalErrorCode.BAD_REQUEST)
+            throw AlreadyExistException(GlobalErrorCode.ALREADY_EXIST)
         val user = User(email, password, passwordEncoder)
         userRepository.save(user)
     }
