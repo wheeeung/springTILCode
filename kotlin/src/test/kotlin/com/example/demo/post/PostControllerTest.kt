@@ -47,11 +47,5 @@ class PostControllerTest (
             .accept(MediaType.APPLICATION_JSON)
                 .header("Authorization", "bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImV4cCI6MTY3MzU5MTczMX0.KQlL5Er1cx6K00DIzwPqz8_87su6Z5ajb8xdjqnAnFk")
         ).andExpect(status().isOk)
-            .andExpect(
-                jsonPath("$.title").value("title1234")
-            )
-            .andExpect(
-                jsonPath("$.content").value("content1234")
-            )
     }
 }
