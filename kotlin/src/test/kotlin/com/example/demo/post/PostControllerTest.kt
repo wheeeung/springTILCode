@@ -23,9 +23,7 @@ class PostControllerTest (
     @Autowired
     val mvc: MockMvc,
     @Autowired
-    val postService: PostService,
-    @Autowired
-    val postRepository: PostRepository
+    val postService: PostService
 ){
     @BeforeEach
     fun setUser(){
