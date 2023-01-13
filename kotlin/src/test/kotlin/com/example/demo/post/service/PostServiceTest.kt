@@ -1,4 +1,4 @@
-package com.example.demo.post
+package com.example.demo.post.service
 
 import com.example.demo.domain.post.controller.dto.request.PostRequest
 import com.example.demo.domain.post.exception.PostNotFoundException

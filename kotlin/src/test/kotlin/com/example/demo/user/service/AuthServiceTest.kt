@@ -1,4 +1,4 @@
-package com.example.demo.user
+package com.example.demo.user.service
 
 import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.domain.user.service.AuthService
