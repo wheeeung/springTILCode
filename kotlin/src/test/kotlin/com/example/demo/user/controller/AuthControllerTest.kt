@@ -33,4 +33,18 @@ class AuthControllerTest (
         )
             .andExpect(status().isOk)
     }
+
+    @Test
+    fun login(){
+        val request = UserRequest("whee050916@gmail.com", "1234")
+        val json = jacksonObjectMapper().writeValueAsString(request)
+
+        mockMvc.perform(
+            MockMvcRequestBuilders.post("/login")
+                .content(json)
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+        )
+            .andExpect(status().isOk)
+    }
 }
