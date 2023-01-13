@@ -2,6 +2,7 @@ package com.example.demo.user
 
 import com.example.demo.domain.user.service.UserService
 import com.example.demo.global.security.UserAuthentication
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,6 +26,10 @@ class UserServiceTest (
 
     @Test
     fun editProfile(){
-        userService.editProfile("whee050916@gmail.com")
+        val newEmail = "testcode@gmail.com"
+
+        val userResponse = userService.editProfile(newEmail)
+
+        Assertions.assertEquals(userResponse.email, newEmail)
     }
 }

@@ -18,7 +18,7 @@ class UserController(
     }
 
     @PatchMapping("/user")
-    fun editProfile(@RequestBody request: EditProfileRequest){
-        userService.editProfile(request.email)
+    fun editProfile(@RequestBody request: EditProfileRequest) : UserResponse{
+        return userService.editProfile(request.email)
     }
 }

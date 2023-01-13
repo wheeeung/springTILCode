@@ -22,11 +22,12 @@ class UserService (
     }
 
     @Transactional
-    fun editProfile(email: String) {
+    fun editProfile(email: String): UserResponse {
         if(userRepository.findByEmail(email)?.equals(null) == false)
             throw AlreadyExistException(GlobalErrorCode.ALREADY_EXIST)
         val user = userRepository.findByEmail(securityUtil.getEmail())
             ?: throw EmailNotFoundException(GlobalErrorCode.EMAIL_NOT_FOUND)
         user.editProfile(email)
+        return UserResponse(user.email, user.postList)
     }
 }
