@@ -1,6 +1,7 @@
 package com.example.demo.domain.user.entity
 
 import com.example.demo.domain.post.entity.Post
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -22,6 +23,7 @@ data class User (
     @Column
     var password: String? = null,
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = [CascadeType.REMOVE])
     var postList: List<Post>?= null
 ){

@@ -1,6 +1,7 @@
 package com.example.demo.domain.post.entity
 
 import com.example.demo.domain.user.entity.User
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 
 @Entity
@@ -15,6 +16,7 @@ data class Post (
     @Column
     var content: String?= null,
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
     var user: User?= null
