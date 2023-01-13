@@ -32,7 +32,10 @@ class AuthServiceTest (
     @Test
     @DisplayName("2. 로그인")
     fun login(){
-        val tokenResponse = authService.login("whee@gmail.com", "1234")
+        val email = "whee@gmail.com"
+        val password = "1234"
+
+        val tokenResponse = authService.login(email, password)
         println(tokenResponse)
     }
 }
