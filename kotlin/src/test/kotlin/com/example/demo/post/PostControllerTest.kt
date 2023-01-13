@@ -25,11 +25,6 @@ class PostControllerTest (
     @Autowired
     val postService: PostService
 ){
-    @BeforeEach
-    fun setUser(){
-        val userAuthentication = UserAuthentication("whee@gmail.com", null, null)
-        SecurityContextHolder.getContext().authentication = userAuthentication
-    }
 
     @Test
     fun save(){
