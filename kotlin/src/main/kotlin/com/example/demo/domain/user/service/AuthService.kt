@@ -1,6 +1,7 @@
 package com.example.demo.domain.user.service
 
 import com.example.demo.domain.user.controller.dto.response.TokenResponse
+import com.example.demo.domain.user.controller.dto.response.UserResponse
 import com.example.demo.domain.user.entity.User
 import com.example.demo.domain.user.exception.AlreadyExistException
 import com.example.demo.domain.user.exception.EmailNotFoundException
@@ -19,11 +20,12 @@ class AuthService (
     private val passwordEncoder: PasswordEncoder
 ){
     @Transactional
-    fun signup(email: String, password: String){
+    fun signup(email: String, password: String): UserResponse{
         if(userRepository.findByEmail(email)?.equals(null) == false)
             throw AlreadyExistException(GlobalErrorCode.ALREADY_EXIST)
         val user = User(email, password, passwordEncoder)
         userRepository.save(user)
+        return UserResponse(user.email, null)
     }
 
     @Transactional
