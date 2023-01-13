@@ -1,7 +1,10 @@
 package com.example.demo.post
 
 import com.example.demo.domain.post.controller.dto.request.PostRequest
+import com.example.demo.domain.post.exception.PostNotFoundException
+import com.example.demo.domain.post.repository.PostRepository
 import com.example.demo.domain.post.service.PostService
+import com.example.demo.global.error.GlobalErrorCode
 import com.example.demo.global.security.UserAuthentication
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
@@ -13,7 +16,8 @@ import org.springframework.security.core.context.SecurityContextHolder
 
 @SpringBootTest
 class PostServiceTest (
-    @Autowired val postService: PostService
+    @Autowired val postService: PostService,
+    @Autowired val postRepository: PostRepository
 ){
     @BeforeEach
     fun setUser(){
@@ -35,7 +39,14 @@ class PostServiceTest (
     @Test
     @DisplayName("2. 글 보기")
     fun getPost(){
-        postService.getPost(2)
+        val id: Long = 12
+
+        val postResponse = postService.getPost(id)
+        val post = postRepository.findById(id).orElseThrow{PostNotFoundException(GlobalErrorCode.BAD_REQUEST)}
+
+        Assertions.assertEquals(postResponse.title, post.title)
+        Assertions.assertEquals(postResponse.content, post.content)
+        Assertions.assertEquals(postResponse.user?.email, post.user?.email)
     }
 
     @Test
