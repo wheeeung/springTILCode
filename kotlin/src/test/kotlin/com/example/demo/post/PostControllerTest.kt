@@ -49,4 +49,12 @@ class PostControllerTest (
                 .header("Authorization", "bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImV4cCI6MTY3MzU5MTczMX0.KQlL5Er1cx6K00DIzwPqz8_87su6Z5ajb8xdjqnAnFk")
         ).andExpect(status().isOk)
     }
+
+    @Test
+    fun delete(){
+        mvc.perform(
+            MockMvcRequestBuilders.delete("/post/18")
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImV4cCI6MTY3MzU5MTczMX0.KQlL5Er1cx6K00DIzwPqz8_87su6Z5ajb8xdjqnAnFk")
+        ).andExpect(status().isOk)
+    }
 }
