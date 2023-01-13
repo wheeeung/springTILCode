@@ -52,6 +52,11 @@ class PostServiceTest (
     @Test
     @DisplayName("3. 글 삭제")
     fun delete(){
-        postService.delete(1)
+        val id: Long = 3
+
+        postService.delete(id)
+        val post = postRepository.findById(id)
+
+        Assertions.assertEquals(post.isEmpty, true)
     }
 }
