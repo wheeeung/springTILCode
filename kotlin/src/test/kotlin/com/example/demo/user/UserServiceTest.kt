@@ -1,5 +1,6 @@
 package com.example.demo.user
 
+import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.domain.user.service.UserService
 import com.example.demo.global.security.UserAuthentication
 import org.junit.jupiter.api.Assertions
@@ -11,17 +12,25 @@ import org.springframework.security.core.context.SecurityContextHolder
 
 @SpringBootTest
 class UserServiceTest (
-    @Autowired val userService: UserService
+    @Autowired val userService: UserService,
+    @Autowired val userRepository: UserRepository
 ){
     @BeforeEach
     fun setUser(){
-        val userAuthentication = UserAuthentication("whee050916@gmail.com", null, null)
+        val userAuthentication = UserAuthentication("test@gmail.com", null, null)
         SecurityContextHolder.getContext().authentication = userAuthentication
     }
 
     @Test
     fun getUser(){
-        userService.getUser()
+        val email = "test@gmail.com"
+
+        val userResponse = userService.getUser()
+        val user = userRepository.findByEmail(email)
+
+        if (user != null) {
+            Assertions.assertEquals(userResponse.email, user.email)
+        }
     }
 
     @Test
