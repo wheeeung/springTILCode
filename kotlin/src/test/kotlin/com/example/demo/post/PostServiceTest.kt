@@ -3,6 +3,7 @@ package com.example.demo.post
 import com.example.demo.domain.post.controller.dto.request.PostRequest
 import com.example.demo.domain.post.service.PostService
 import com.example.demo.global.security.UserAuthentication
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -24,7 +25,11 @@ class PostServiceTest (
     @DisplayName("1. 글 저장")
     fun save(){
         val request = PostRequest("title", "content")
-        postService.create(request)
+
+        val postResponse = postService.create(request)
+
+        Assertions.assertEquals(postResponse.title, request.title)
+        Assertions.assertEquals(postResponse.content, request.content)
     }
 
     @Test
