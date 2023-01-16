@@ -1,6 +1,6 @@
-package com.example.springtilcode.user;
+package com.example.springtilcode.post.service;
 
-import com.example.springtilcode.domain.user.service.UserService;
+import com.example.springtilcode.domain.post.service.PostService;
 import com.example.springtilcode.global.jwt.UserAuthentication;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -10,9 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 @SpringBootTest
-public class UserServiceTest {
+public class PostServiceTest {
     @Autowired
-    private UserService userService;
+    private PostService postService;
 
     @BeforeEach
     public void setUser(){
@@ -21,8 +21,20 @@ public class UserServiceTest {
     }
 
     @Test
-    @DisplayName("getUser")
-    public void getUser(){
-        userService.getUser();
+    @DisplayName("1. 글 쓰기")
+    public void save(){
+        postService.save("title", "content");
+    }
+
+    @Test
+    @DisplayName("2. 글 삭제")
+    public void delete(){
+        postService.delete(1);
+    }
+
+    @Test
+    @DisplayName("3. 글 보기")
+    public void getPost(){
+        postService.getPost(2);
     }
 }

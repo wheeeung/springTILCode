@@ -1,4 +1,4 @@
-package com.example.springtilcode.user;
+package com.example.springtilcode.user.service;
 
 import com.example.springtilcode.domain.user.controller.dto.TokenResponse;
 import com.example.springtilcode.domain.user.service.AuthService;
