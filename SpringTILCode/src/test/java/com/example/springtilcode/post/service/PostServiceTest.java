@@ -1,7 +1,9 @@
 package com.example.springtilcode.post.service;
 
+import com.example.springtilcode.domain.post.controller.dto.response.PostResponse;
 import com.example.springtilcode.domain.post.service.PostService;
 import com.example.springtilcode.global.jwt.UserAuthentication;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,7 +25,13 @@ public class PostServiceTest {
     @Test
     @DisplayName("1. 글 쓰기")
     public void save(){
-        postService.save("title", "content");
+        String title = "title 1234";
+        String content = "content 1234";
+
+        PostResponse postResponse = postService.save(title, content);
+
+        Assertions.assertEquals(postResponse.getTitle(), title);
+        Assertions.assertEquals(postResponse.getContent(), content);
     }
 
     @Test

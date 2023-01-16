@@ -12,8 +12,8 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping("/post")
-    public void save(@RequestBody PostRequest request){
-        postService.save(request.getTitle(), request.getContent());
+    public PostResponse save(@RequestBody PostRequest request){
+        return postService.save(request.getTitle(), request.getContent());
     }
 
     @DeleteMapping("/post/{id}")

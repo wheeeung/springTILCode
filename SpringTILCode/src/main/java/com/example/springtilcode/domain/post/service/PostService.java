@@ -21,7 +21,7 @@ public class PostService {
     private final UserRepository userRepository;
 
     @Transactional
-    public void save(String title, String content){
+    public PostResponse save(String title, String content){
         User user = userRepository.findByEmail(SecurityUtil.getEmail()).orElseThrow(UserNotFoundException::new);
         Post post = Post.builder()
                 .title(title)
@@ -29,6 +29,11 @@ public class PostService {
                 .user(user)
                 .build();
         postRepository.save(post);
+        return PostResponse.builder()
+                .title(post.getTitle())
+                .content(post.getContent())
+                .user(post.getUser())
+                .build();
     }
 
     @Transactional
