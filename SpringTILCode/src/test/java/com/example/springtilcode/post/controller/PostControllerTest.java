@@ -41,4 +41,12 @@ public class PostControllerTest {
                         .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aGVlMDUwOTE2QGdtYWlsLmNvbSIsImlhdCI6MTY3Mzg0MjIwOSwiZXhwIjoxNjczODQ1ODA5fQ.G8_30bXmBOppTB2lCFfRK20WJ8EvYdktdtQCRqYDeV8")
         ).andExpect(status().isOk());
     }
+
+    @Test
+    public void getPost() throws Exception{
+        mockMvc.perform(
+                MockMvcRequestBuilders.get("/post/2")
+                        .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aGVlMDUwOTE2QGdtYWlsLmNvbSIsImlhdCI6MTY3Mzg0MjIwOSwiZXhwIjoxNjczODQ1ODA5fQ.G8_30bXmBOppTB2lCFfRK20WJ8EvYdktdtQCRqYDeV8")
+        ).andExpect(status().isOk());
+    }
 }
