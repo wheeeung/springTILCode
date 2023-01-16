@@ -1,6 +1,8 @@
 package com.example.springtilcode.post.service;
 
 import com.example.springtilcode.domain.post.controller.dto.response.PostResponse;
+import com.example.springtilcode.domain.post.entity.Post;
+import com.example.springtilcode.domain.post.exception.PostNotFoundException;
 import com.example.springtilcode.domain.post.repository.PostRepository;
 import com.example.springtilcode.domain.post.service.PostService;
 import com.example.springtilcode.global.jwt.UserAuthentication;
@@ -51,6 +53,12 @@ public class PostServiceTest {
     @Test
     @DisplayName("3. 글 보기")
     public void getPost(){
-        postService.getPost(2);
+        Integer id = 2;
+
+        PostResponse postResponse = postService.getPost(id);
+        Post post = postRepository.findById(id).orElseThrow(PostNotFoundException::new);
+
+        Assertions.assertEquals(post.getTitle(), postResponse.getTitle());
+        Assertions.assertEquals(post.getContent(), postResponse.getContent());
     }
 }
