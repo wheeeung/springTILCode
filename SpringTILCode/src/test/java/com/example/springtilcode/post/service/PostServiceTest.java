@@ -37,7 +37,9 @@ public class PostServiceTest {
     @Test
     @DisplayName("2. 글 삭제")
     public void delete(){
-        postService.delete(1);
+        Integer id = 1;
+
+        postService.delete(id);
     }
 
     @Test
