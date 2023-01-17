@@ -25,6 +25,12 @@ public class AuthServiceTest {
     @Test
     @DisplayName("login")
     public void login(){
-        authService.login("test@gmail.com", "1234");
+        String email = "test@gmail.com";
+        String password = "1234";
+
+        TokenResponse tokenResponse = authService.login(email, password);
+
+        System.out.println(tokenResponse.getAccessToken());
+        System.out.println(tokenResponse.getRefreshToken());
     }
 }
