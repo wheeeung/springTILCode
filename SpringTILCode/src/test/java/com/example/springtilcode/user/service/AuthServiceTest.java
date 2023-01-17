@@ -16,7 +16,10 @@ public class AuthServiceTest {
     @Test
     @DisplayName("signup")
     public void signup(){
-        authService.signup("test@gmail.com", "1234");
+        String email = "test1234@gmail.com";
+        String password = "1234";
+
+        authService.signup(email, password);
     }
 
     @Test
