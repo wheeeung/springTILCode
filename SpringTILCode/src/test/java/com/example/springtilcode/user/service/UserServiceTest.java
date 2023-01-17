@@ -1,7 +1,9 @@
 package com.example.springtilcode.user.service;
 
+import com.example.springtilcode.domain.user.controller.dto.UserResponse;
 import com.example.springtilcode.domain.user.service.UserService;
 import com.example.springtilcode.global.jwt.UserAuthentication;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,6 +25,8 @@ public class UserServiceTest {
     @Test
     @DisplayName("getUser")
     public void getUser(){
-        userService.getUser();
+        UserResponse userResponse = userService.getUser();
+
+        Assertions.assertEquals(userResponse.getEmail(), "whee050916@gmail.com");
     }
 }
