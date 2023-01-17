@@ -37,4 +37,21 @@ public class AuthControllerTest {
                         .accept(MediaType.APPLICATION_JSON)
         ).andExpect(status().isOk());
     }
+
+    @Test
+    public void login() throws Exception{
+        String email = "whee123@gmail.com";
+        String password = "1234";
+
+        AuthRequest authRequest = new AuthRequest(email, password);
+        String json = objectMapper.writeValueAsString(authRequest);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.post("/login")
+                        .content(json)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON)
+        )
+                .andExpect(status().isOk());
+    }
 }
