@@ -28,9 +28,4 @@ public class AuthController {
     public TokenResponse login(@Valid @RequestBody AuthRequest request){
         return authService.login(request.getEmail(), request.getPassword());
     }
-
-    @GetMapping("/mypage")
-    public UserResponse getUser(){
-        return userService.getUser();
-    }
 }
