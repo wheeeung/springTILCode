@@ -1,7 +1,7 @@
 package com.example.springtilcode.global.jwt;
 
-import com.example.springtilcode.domain.user.entity.RefreshToken;
-import com.example.springtilcode.domain.user.repository.RefreshTokenRepository;
+import com.example.springtilcode.domain.token.RefreshToken;
+import com.example.springtilcode.domain.token.RefreshTokenRepository;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

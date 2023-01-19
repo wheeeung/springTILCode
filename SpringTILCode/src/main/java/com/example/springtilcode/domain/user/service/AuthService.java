@@ -1,16 +1,14 @@
 package com.example.springtilcode.domain.user.service;
 
 import com.example.springtilcode.domain.user.controller.dto.TokenResponse;
-import com.example.springtilcode.domain.user.controller.dto.UserResponse;
 import com.example.springtilcode.domain.user.entity.User;
 import com.example.springtilcode.domain.user.exception.AlreadyExistException;
 import com.example.springtilcode.domain.user.exception.PasswordNotMatchException;
 import com.example.springtilcode.domain.user.exception.UserNotFoundException;
-import com.example.springtilcode.domain.user.repository.RefreshTokenRepository;
+import com.example.springtilcode.domain.token.RefreshTokenRepository;
 import com.example.springtilcode.domain.user.repository.UserRepository;
 import com.example.springtilcode.global.error.ErrorCode;
 import com.example.springtilcode.global.jwt.TokenProvider;
-import com.example.springtilcode.global.utils.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.springtilcode.domain.user.entity;
+package com.example.springtilcode.domain.token;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
