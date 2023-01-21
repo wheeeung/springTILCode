@@ -3,6 +3,7 @@ package com.example.demo.domain.user.controller
 import com.example.demo.domain.user.controller.dto.request.EditProfileRequest
 import com.example.demo.domain.user.controller.dto.response.UserResponse
 import com.example.demo.domain.user.service.UserService
+import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -18,7 +19,7 @@ class UserController(
     }
 
     @PatchMapping("/user")
-    fun editProfile(@RequestBody request: EditProfileRequest) : UserResponse{
+    fun editProfile(@Valid @RequestBody request: EditProfileRequest) : UserResponse{
         return userService.editProfile(request.email)
     }
 }
