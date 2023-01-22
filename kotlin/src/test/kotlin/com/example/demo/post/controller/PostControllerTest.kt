@@ -26,7 +26,6 @@ class PostControllerTest (
         val postRequest = PostRequest("title1234", "content1234")
 
         val json = jacksonObjectMapper().writeValueAsString(postRequest)
-        println(json)
 
         mvc.perform(
             MockMvcRequestBuilders.post("/post")
