@@ -33,4 +33,8 @@ public class User {
         this.email = email;
         this.password = passwordEncoder.encode(password);
     }
+
+    public void editProfile(String email){
+        this.email = email;
+    }
 }

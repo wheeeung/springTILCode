@@ -25,4 +25,17 @@ public class UserService {
                 .postList(user.getPostList())
                 .build();
     }
+
+    @Transactional
+    public UserResponse editProfile(String email){
+        User user = userRepository.findByEmail(SecurityUtil.getEmail()).orElseThrow(UserNotFoundException::new);
+        user.editProfile(email);
+        userRepository.save(user);
+
+        return UserResponse.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .postList(user.getPostList())
+                .build();
+    }
 }
