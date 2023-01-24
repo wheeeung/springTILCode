@@ -18,7 +18,7 @@ public class UserServiceTest {
 
     @BeforeEach
     public void setUser(){
-        UserAuthentication userAuthentication = new UserAuthentication("whee050916@gmail.com", null, null);
+        UserAuthentication userAuthentication = new UserAuthentication("whee1234@gmail.com", null, null);
         SecurityContextHolder.getContext().setAuthentication(userAuthentication);
     }
 
@@ -28,5 +28,14 @@ public class UserServiceTest {
         UserResponse userResponse = userService.getUser();
 
         Assertions.assertEquals(userResponse.getEmail(), "whee050916@gmail.com");
+    }
+
+    @Test
+    public void editProfile(){
+        String email = "whee050916@gmail.com";
+
+        UserResponse userResponse = userService.editProfile(email);
+
+        Assertions.assertEquals(userResponse.getEmail(), email);
     }
 }
