@@ -1,6 +1,6 @@
 package com.example.springtilcode.domain.user.service;
 
-import com.example.springtilcode.domain.user.controller.dto.TokenResponse;
+import com.example.springtilcode.domain.user.controller.dto.response.TokenResponse;
 import com.example.springtilcode.domain.user.entity.User;
 import com.example.springtilcode.domain.user.exception.AlreadyExistException;
 import com.example.springtilcode.domain.user.exception.PasswordNotMatchException;

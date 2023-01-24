@@ -1,6 +1,6 @@
 package com.example.springtilcode.user.service;
 
-import com.example.springtilcode.domain.user.controller.dto.UserResponse;
+import com.example.springtilcode.domain.user.controller.dto.response.UserResponse;
 import com.example.springtilcode.domain.user.service.UserService;
 import com.example.springtilcode.global.jwt.UserAuthentication;
 import org.junit.jupiter.api.Assertions;

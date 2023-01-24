@@ -1,7 +1,7 @@
 package com.example.springtilcode.domain.user.controller;
 
-import com.example.springtilcode.domain.user.controller.dto.AuthRequest;
-import com.example.springtilcode.domain.user.controller.dto.TokenResponse;
+import com.example.springtilcode.domain.user.controller.dto.request.AuthRequest;
+import com.example.springtilcode.domain.user.controller.dto.response.TokenResponse;
 import com.example.springtilcode.domain.user.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

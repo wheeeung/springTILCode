@@ -1,7 +1,6 @@
 package com.example.springtilcode.user.controller;
 
-import com.example.springtilcode.domain.user.controller.dto.AuthRequest;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.example.springtilcode.domain.user.controller.dto.request.AuthRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.example.springtilcode.domain.user.service;
 
-import com.example.springtilcode.domain.user.controller.dto.UserResponse;
+import com.example.springtilcode.domain.user.controller.dto.response.UserResponse;
 import com.example.springtilcode.domain.user.entity.User;
 import com.example.springtilcode.domain.user.exception.UserNotFoundException;
 import com.example.springtilcode.domain.user.repository.UserRepository;

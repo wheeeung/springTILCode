@@ -1,6 +1,6 @@
 package com.example.springtilcode.domain.user.controller;
 
-import com.example.springtilcode.domain.user.controller.dto.UserResponse;
+import com.example.springtilcode.domain.user.controller.dto.response.UserResponse;
 import com.example.springtilcode.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.springtilcode.domain.user.controller.dto;
+package com.example.springtilcode.domain.user.controller.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
