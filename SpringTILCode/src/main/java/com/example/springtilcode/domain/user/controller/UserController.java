@@ -23,6 +23,6 @@ public class UserController {
 
     @PatchMapping("/mypage")
     public UserResponse editProfile(@RequestBody @Valid EditProfileRequest request){
-        return userService.editProfile(request.getEmail());it 
+        return userService.editProfile(request.getEmail());
     }
 }
