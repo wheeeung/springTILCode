@@ -59,4 +59,16 @@ class PostServiceTest (
 
         Assertions.assertEquals(post.isEmpty, true)
     }
+
+    @Test
+    @DisplayName("4. 글 수정")
+    fun editPost(){
+        val id: Long = 4
+        val request = PostRequest("content1234", "title1234")
+
+        val response = postService.editPost(request, id)
+
+        Assertions.assertEquals(response.title, request.title)
+        Assertions.assertEquals(response.content, request.content)
+    }
 }
