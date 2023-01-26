@@ -20,4 +20,9 @@ data class Post (
     @ManyToOne
     @JoinColumn(name = "user_id")
     var user: User?= null
-)
+){
+    fun editPost(title: String?, content: String?){
+        this.title = title
+        this.content = content
+    }
+}

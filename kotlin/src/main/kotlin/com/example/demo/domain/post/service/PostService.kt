@@ -42,4 +42,14 @@ class PostService (
         val post: Post = postRepository.findById(id).orElseThrow{PostNotFoundException(GlobalErrorCode.BAD_REQUEST)}
         return PostResponse(post)
     }
+
+    @Transactional
+    fun editPost(request: PostRequest, id: Long): PostResponse{
+        val post = postRepository.findById(id).orElseThrow{PostNotFoundException(GlobalErrorCode.BAD_REQUEST)}
+        post.editPost(request.title, request.content)
+
+        postRepository.save(post)
+
+        return PostResponse(post);
+    }
 }
