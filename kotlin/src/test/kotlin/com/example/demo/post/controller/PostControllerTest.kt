@@ -51,4 +51,19 @@ class PostControllerTest (
                 .header("Authorization", "bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImV4cCI6MTY3MzU5MTczMX0.KQlL5Er1cx6K00DIzwPqz8_87su6Z5ajb8xdjqnAnFk")
         ).andExpect(status().isOk)
     }
+
+    @Test
+    fun editPost(){
+        val postRequest = PostRequest("title", "content")
+
+        val json = jacksonObjectMapper().writeValueAsString(postRequest)
+
+        mvc.perform(
+            MockMvcRequestBuilders.patch("/post/23")
+                .content(json)
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aGVlQGdtYWlsLmNvbSIsImV4cCI6MTY3NDk3MjQwM30.0s0KjJRF9zSsnBjxDNRoLTKzXD7cnp2M34RJYAIBV2M")
+        ).andExpect(status().isOk)
+    }
 }
