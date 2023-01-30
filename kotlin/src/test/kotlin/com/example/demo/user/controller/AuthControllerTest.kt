@@ -1,7 +1,6 @@
 package com.example.demo.user.controller
 
 import com.example.demo.domain.user.controller.dto.request.UserRequest
-import com.example.demo.domain.user.service.AuthService
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,9 +15,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 @AutoConfigureMockMvc
 class AuthControllerTest (
     @Autowired
-    val mockMvc: MockMvc,
-    @Autowired
-    val authService: AuthService
+    val mockMvc: MockMvc
 ){
     @Test
     fun signup(){
