@@ -13,9 +13,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class PostControllerTest {
-    @Autowired
-    private lateinit var mvc: MockMvc
+class PostControllerTest (
+        @Autowired
+        private val mvc: MockMvc
+){
     @Test
     fun save(){
         val postRequest = PostRequest("title1234", "content1234")
