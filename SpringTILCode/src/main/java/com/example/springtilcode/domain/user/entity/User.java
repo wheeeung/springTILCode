@@ -26,6 +26,10 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private List<Post> postList;
 

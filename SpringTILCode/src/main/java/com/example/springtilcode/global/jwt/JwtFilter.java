@@ -2,6 +2,7 @@ package com.example.springtilcode.global.jwt;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.util.StringUtils;
@@ -22,10 +23,7 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String jwt = getJwtFromRequest(request);
         if(StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)){
-            String userId = tokenProvider.getEmail(jwt);
-
-            UserAuthentication authentication = new UserAuthentication(userId, null, null);
-            authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+            Authentication authentication = tokenProvider.getAuthentication(jwt);
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }

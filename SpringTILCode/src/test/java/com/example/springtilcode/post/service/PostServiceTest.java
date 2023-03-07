@@ -5,7 +5,6 @@ import com.example.springtilcode.domain.post.entity.Post;
 import com.example.springtilcode.domain.post.exception.PostNotFoundException;
 import com.example.springtilcode.domain.post.repository.PostRepository;
 import com.example.springtilcode.domain.post.service.PostService;
-import com.example.springtilcode.global.jwt.UserAuthentication;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
