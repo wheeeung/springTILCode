@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
@@ -22,6 +24,10 @@ data class User (
 
     @Column
     var password: String? = null,
+
+    @Column
+    @Enumerated(value = EnumType.STRING)
+    var role: Role? = null,
 
     @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = [CascadeType.REMOVE])
