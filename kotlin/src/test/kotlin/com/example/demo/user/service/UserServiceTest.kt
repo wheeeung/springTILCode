@@ -2,7 +2,6 @@ package com.example.demo.user.service
 
 import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.domain.user.service.UserService
-import com.example.demo.global.security.UserAuthentication
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

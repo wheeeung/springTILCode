@@ -5,7 +5,6 @@ import com.example.demo.domain.post.exception.PostNotFoundException
 import com.example.demo.domain.post.repository.PostRepository
 import com.example.demo.domain.post.service.PostService
 import com.example.demo.global.error.GlobalErrorCode
-import com.example.demo.global.security.UserAuthentication
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName

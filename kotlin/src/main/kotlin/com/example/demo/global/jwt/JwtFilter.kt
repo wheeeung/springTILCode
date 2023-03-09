@@ -1,9 +1,9 @@
 package com.example.demo.global.jwt
 
-import com.example.demo.global.security.UserAuthentication
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
+import org.springframework.security.core.Authentication
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
@@ -20,9 +20,8 @@ class JwtFilter(
         val authenticationHeader: String? = request.getHeader("Authorization") ?: return filterChain.doFilter(request, response)
         val token = authenticationHeader?.substring("Bearer ".length) ?: return filterChain.doFilter(request, response)
         if(jwtProvider.validation(token)){
-            val email = jwtProvider.getEmail(token)
-            val userAuthentication = UserAuthentication(email, null, null)
-            SecurityContextHolder.getContext().authentication = userAuthentication
+            val authentication: Authentication = jwtProvider.getAuthentication(token)
+            SecurityContextHolder.getContext().authentication = authentication
         }
 
         filterChain.doFilter(request, response)

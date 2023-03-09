@@ -34,7 +34,7 @@ class AuthService (
         if(!passwordEncoder.matches(password, user.password))
             throw PasswordNotMatchesException(GlobalErrorCode.BAD_REQUEST)
 
-        val access = jwtProvider.createAccessToken(email)
+        val access = jwtProvider.createAccessToken(email, user.role)
         val refresh = jwtProvider.createRefreshToken(email)
 
         return TokenResponse(access, refresh)
