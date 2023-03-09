@@ -11,6 +11,8 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.Authentication
 import org.springframework.security.core.context.SecurityContextHolder
 
 @SpringBootTest
@@ -20,8 +22,8 @@ class PostServiceTest (
 ){
     @BeforeEach
     fun setUser(){
-        val userAuthentication = UserAuthentication("test@gmail.com", null, null)
-        SecurityContextHolder.getContext().authentication = userAuthentication
+        val authentication : Authentication = UsernamePasswordAuthenticationToken("test@gmail.com", "", null)
+        SecurityContextHolder.getContext().authentication = authentication
     }
 
     @Test
