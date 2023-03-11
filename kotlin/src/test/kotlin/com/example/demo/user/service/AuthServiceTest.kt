@@ -18,7 +18,7 @@ class AuthServiceTest (
     @Test
     @DisplayName("1. 회원가입")
     fun signup(){
-        val email = "whee@gmail.com"
+        val email = "test@gmail.com"
         val password = "1234"
 
         val userResponse = authService.signup(email, password)
@@ -32,7 +32,7 @@ class AuthServiceTest (
     @Test
     @DisplayName("2. 로그인")
     fun login(){
-        val email = "whee@gmail.com"
+        val email = "test@gmail.com"
         val password = "1234"
 
         val tokenResponse = authService.login(email, password)

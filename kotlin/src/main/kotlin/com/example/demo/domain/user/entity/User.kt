@@ -33,9 +33,10 @@ data class User (
     @OneToMany(mappedBy = "user", cascade = [CascadeType.REMOVE])
     var postList: List<Post>?= null
 ){
-    constructor(email: String?, password: String?, passwordEncoder: PasswordEncoder) : this() {
+    constructor(email: String?, password: String?, role: Role?) : this() {
         this.email = email
-        this.password = passwordEncoder.encode(password)
+        this.password = password
+        this.role = role
     }
 
     fun editProfile(email: String?){

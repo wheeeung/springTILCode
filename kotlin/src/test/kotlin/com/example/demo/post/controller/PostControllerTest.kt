@@ -28,7 +28,7 @@ class PostControllerTest (
             .content(json)
             .contentType(MediaType.APPLICATION_JSON)
             .accept(MediaType.APPLICATION_JSON)
-                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aGVlQGdtYWlsLmNvbSIsImV4cCI6MTY3NTA1OTI5NH0.4EFsRKBvHczR_okzFQnwxT09eAzR8U6YUYs4SoM6ymU")
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjc4NTA2MDQ0fQ.xlQX9Vx2K_t2LbTGykZqYRkE88PedY0xbR7FLNxRS8w")
         ).andExpect(status().isOk)
     }
 
