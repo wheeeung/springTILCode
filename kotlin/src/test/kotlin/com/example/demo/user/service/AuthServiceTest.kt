@@ -1,7 +1,7 @@
 package com.example.demo.user.service
 
-import com.example.demo.domain.user.dao.UserRepository
-import com.example.demo.domain.user.application.AuthService
+import com.example.demo.domain.user.repository.UserRepository
+import com.example.demo.domain.user.service.AuthService
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

@@ -1,4 +1,4 @@
-package com.example.demo.domain.user.dto.response
+package com.example.demo.domain.user.api.dto.response
 
 import com.example.demo.domain.post.domain.Post
 

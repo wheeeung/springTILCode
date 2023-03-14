@@ -1,6 +1,6 @@
 package com.example.demo.user.controller
 
-import com.example.demo.domain.user.dto.request.EditProfileRequest
+import com.example.demo.domain.user.api.dto.request.EditProfileRequest
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

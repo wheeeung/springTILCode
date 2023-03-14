@@ -1,8 +1,8 @@
 package com.example.demo.domain.user.api
 
-import com.example.demo.domain.user.dto.request.EditProfileRequest
-import com.example.demo.domain.user.dto.response.UserResponse
-import com.example.demo.domain.user.application.UserService
+import com.example.demo.domain.user.api.dto.request.EditProfileRequest
+import com.example.demo.domain.user.api.dto.response.UserResponse
+import com.example.demo.domain.user.service.UserService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping

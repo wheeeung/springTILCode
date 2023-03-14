@@ -1,13 +1,13 @@
-package com.example.demo.domain.user.application
+package com.example.demo.domain.user.service
 
-import com.example.demo.domain.user.dto.response.TokenResponse
-import com.example.demo.domain.user.dto.response.UserResponse
+import com.example.demo.domain.user.api.dto.response.TokenResponse
+import com.example.demo.domain.user.api.dto.response.UserResponse
 import com.example.demo.domain.user.domain.Role
 import com.example.demo.domain.user.domain.User
 import com.example.demo.domain.user.exception.AlreadyExistException
 import com.example.demo.domain.user.exception.EmailNotFoundException
 import com.example.demo.domain.user.exception.PasswordNotMatchesException
-import com.example.demo.domain.user.dao.UserRepository
+import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.global.error.GlobalErrorCode
 import com.example.demo.global.jwt.JwtProvider
 import org.springframework.security.crypto.password.PasswordEncoder

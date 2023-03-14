@@ -1,4 +1,4 @@
-package com.example.demo.domain.user.dao
+package com.example.demo.domain.user.repository
 
 import com.example.demo.domain.user.domain.User
 import org.springframework.data.jpa.repository.JpaRepository

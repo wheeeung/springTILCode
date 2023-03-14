@@ -1,13 +1,13 @@
-package com.example.demo.domain.post.application
+package com.example.demo.domain.post.service
 
-import com.example.demo.domain.post.dto.request.PostRequest
-import com.example.demo.domain.post.dto.response.PostResponse
+import com.example.demo.domain.post.api.dto.request.PostRequest
+import com.example.demo.domain.post.api.dto.response.PostResponse
 import com.example.demo.domain.post.domain.Post
 import com.example.demo.domain.post.exception.PostNotFoundException
-import com.example.demo.domain.post.dao.PostRepository
+import com.example.demo.domain.post.repository.PostRepository
 import com.example.demo.domain.user.domain.User
 import com.example.demo.domain.user.exception.EmailNotFoundException
-import com.example.demo.domain.user.dao.UserRepository
+import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.global.error.GlobalErrorCode
 import com.example.demo.global.util.SecurityUtil
 import org.springframework.stereotype.Service

@@ -1,9 +1,9 @@
-package com.example.demo.domain.user.application
+package com.example.demo.domain.user.service
 
-import com.example.demo.domain.user.dto.response.UserResponse
+import com.example.demo.domain.user.api.dto.response.UserResponse
 import com.example.demo.domain.user.exception.AlreadyExistException
 import com.example.demo.domain.user.exception.EmailNotFoundException
-import com.example.demo.domain.user.dao.UserRepository
+import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.global.error.GlobalErrorCode
 import com.example.demo.global.util.SecurityUtil
 import org.springframework.stereotype.Service

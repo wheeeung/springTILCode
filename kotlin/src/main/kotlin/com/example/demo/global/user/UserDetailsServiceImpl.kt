@@ -2,7 +2,7 @@ package com.example.demo.global.user
 
 import com.example.demo.domain.user.domain.User
 import com.example.demo.domain.user.exception.EmailNotFoundException
-import com.example.demo.domain.user.dao.UserRepository
+import com.example.demo.domain.user.repository.UserRepository
 import com.example.demo.global.error.GlobalErrorCode
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService

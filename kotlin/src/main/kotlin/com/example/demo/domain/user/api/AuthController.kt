@@ -1,9 +1,9 @@
 package com.example.demo.domain.user.api
 
-import com.example.demo.domain.user.dto.request.UserRequest
-import com.example.demo.domain.user.dto.response.TokenResponse
-import com.example.demo.domain.user.dto.response.UserResponse
-import com.example.demo.domain.user.application.AuthService
+import com.example.demo.domain.user.api.dto.request.UserRequest
+import com.example.demo.domain.user.api.dto.response.TokenResponse
+import com.example.demo.domain.user.api.dto.response.UserResponse
+import com.example.demo.domain.user.service.AuthService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

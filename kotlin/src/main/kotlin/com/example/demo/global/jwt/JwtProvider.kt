@@ -1,7 +1,7 @@
 package com.example.demo.global.jwt
 
 import com.example.demo.domain.token.domain.RefreshToken
-import com.example.demo.domain.token.dao.RefreshTokenRepository
+import com.example.demo.domain.token.repository.RefreshTokenRepository
 import com.example.demo.domain.user.domain.Role
 import com.example.demo.global.user.UserDetailsServiceImpl
 import io.jsonwebtoken.Claims

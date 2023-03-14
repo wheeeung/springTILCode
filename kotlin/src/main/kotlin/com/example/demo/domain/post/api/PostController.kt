@@ -1,8 +1,8 @@
 package com.example.demo.domain.post.api
 
-import com.example.demo.domain.post.dto.request.PostRequest
-import com.example.demo.domain.post.dto.response.PostResponse
-import com.example.demo.domain.post.application.PostService
+import com.example.demo.domain.post.api.dto.request.PostRequest
+import com.example.demo.domain.post.api.dto.response.PostResponse
+import com.example.demo.domain.post.service.PostService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping

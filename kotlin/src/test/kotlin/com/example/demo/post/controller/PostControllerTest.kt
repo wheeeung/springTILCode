@@ -1,6 +1,6 @@
 package com.example.demo.post.controller
 
-import com.example.demo.domain.post.dto.request.PostRequest
+import com.example.demo.domain.post.api.dto.request.PostRequest
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
