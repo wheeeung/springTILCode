@@ -1,6 +1,6 @@
 package com.example.demo.global.user
 
-import com.example.demo.domain.user.entity.User
+import com.example.demo.domain.user.domain.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails

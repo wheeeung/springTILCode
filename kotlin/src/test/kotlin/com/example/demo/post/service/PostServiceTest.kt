@@ -1,9 +1,9 @@
 package com.example.demo.post.service
 
-import com.example.demo.domain.post.controller.dto.request.PostRequest
+import com.example.demo.domain.post.dto.request.PostRequest
 import com.example.demo.domain.post.exception.PostNotFoundException
-import com.example.demo.domain.post.repository.PostRepository
-import com.example.demo.domain.post.service.PostService
+import com.example.demo.domain.post.dao.PostRepository
+import com.example.demo.domain.post.application.PostService
 import com.example.demo.global.error.GlobalErrorCode
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
