@@ -1,7 +1,6 @@
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.1.0'
-    id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
@@ -37,7 +36,7 @@ dependencies {
 
     //setting
     compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'git
+    annotationProcessor 'org.projectlombok:lombok'
 
     //validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -50,24 +49,6 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-def querydslDir = "$buildDir/generated/querydsl"
-// JPA 사용 여부와 사용할 경로를 설정
-querydsl {
-    jpa = true
-    querydslSourcesDir = querydslDir
-}
-// build 시 사용할 sourceSet 추가
-sourceSets {
-    main.java.srcDir querydslDir
-}
-// querydsl 컴파일시 사용할 옵션 설정
-compileQuerydsl{
-    options.annotationProcessorPath = configurations.querydsl
-}
-// querydsl 이 compileClassPath 를 상속하도록 설정
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-    querydsl.extendsFrom compileClasspath
+clean {
+    delete file('src/main/generated')
 }
