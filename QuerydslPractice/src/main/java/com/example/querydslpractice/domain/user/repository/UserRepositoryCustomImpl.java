@@ -20,6 +20,7 @@ public class UserRepositoryCustomImpl implements UserRepositoryCustom{
     public List<User> querydslFindAll() {
         return jpaQueryFactory
                 .select(user)
+                .from(user)
                 .fetch();
     }
 }
