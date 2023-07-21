@@ -14,16 +14,5 @@ public class ImageResponse {
     private String total;
     private Integer start;
     private Integer display;
-    private List<ImageItem> itemList;
-
-    @Getter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public class ImageItem {
-        private String title;
-        private String link;
-        private String thumbnail;
-        private String sizeheight;
-        private String sizewidth;
-    }
+    private List<ImageItem> items;
 }
