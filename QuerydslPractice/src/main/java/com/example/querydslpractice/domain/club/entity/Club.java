@@ -1,32 +1,27 @@
-package com.example.querydslpractice.domain.user.entity;
+package com.example.querydslpractice.domain.club.entity;
 
-import com.example.querydslpractice.domain.club.entity.Club;
+import com.example.querydslpractice.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
+public class Club {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
-    private String email;
-
-    @Column
-    private String password;
-
-    @Column
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "club_id")
-    private Club club;
+    @OneToMany(mappedBy = "club", cascade = CascadeType.REMOVE)
+    private List<User> userList;
 }
